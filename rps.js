@@ -117,7 +117,7 @@ while(gameStatus)
 
     //instead of prompt, we must have a button which replaces the values of playerMove
     //with images as well, hopefully
-    playerMove = + prompt("Enter a number.");
+    //playerMove = + prompt("Enter a number.");
     document.getElementById("p1").textContent = "You chose: " + moveTranslate(playerMove) +"!";
 
     //random number between 0 and 2 inclusive
