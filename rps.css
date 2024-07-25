@@ -5,5 +5,14 @@ body {
 .container{
     display: grid;
     grid-template-columns: 50% 50%;
-    border-style: outset;
+}
+
+.container div{
+    background-color: rgb(58, 58, 58);
+    border-style: solid;
+    border-radius: 5px;
+}
+
+p {
+    text-align: center;
 }
