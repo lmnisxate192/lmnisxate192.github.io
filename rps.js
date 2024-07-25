@@ -1,7 +1,7 @@
 let gameStatus = true;
 let round = 1;
-let playerMove = 0;
-let compMove = 0;
+let playerMove;
+let compMove;
 
 //aligns move in order to have a straight line of ties, wins, or losses.
 //refer to the 3x3 diagram of moves 
@@ -50,3 +50,4 @@ function moveTranslate(move)
 
 let a = + prompt("Enter a number.");
 document.getElementById("p1").textContent = "You chose: " + moveTranslate(a) +"!";
+document.getElementById("p2").textContent = "Enemy chose: " + compMove + "!";
