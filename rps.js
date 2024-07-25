@@ -1,5 +1,6 @@
 let gameStatus = true;
 let round = 1;
+let score = 0;
 let playerMove;
 let compMove;
 
@@ -24,6 +25,8 @@ function moveAlign (move)
     }
 }
 
+//translate your move from integer to string
+//also makes the input of integers from 0 to 2 using modulus 
 function moveTranslate(move)
 {
     if (move > 2)
@@ -33,6 +36,11 @@ function moveTranslate(move)
 
     switch(move)
     {
+        /* 
+            In order to make this function more efficient,
+            we must find a way to reference variables outside of functions,
+            as in replace the values of variables from inside the function.
+        */
         case 0:
             return "rock";
         break;
@@ -48,6 +56,75 @@ function moveTranslate(move)
     }
 }
 
-let a = + prompt("Enter a number.");
-document.getElementById("p1").textContent = "You chose: " + moveTranslate(a) +"!";
-document.getElementById("p2").textContent = "Enemy chose: " + compMove + "!";
+//with 3x3 diagram of moves, they make a line we can compare with equality 
+//with the use of moveAlign() we can change what will happen but with the same equality trait
+function gameLogic (pM, cM)
+{
+    if(pM==cM)
+    {
+        return "tie";
+    }else
+    {
+        moveAlign(pM)
+        if(pM==cM)
+        {
+            return "loss";
+        }else
+        {
+            moveAlign(pM)
+            if(pM==cM)
+            {
+                return "win";
+            }else
+            {
+                alert("There was an error in the gameLogic function.");
+                return "errorLogic";
+            }
+        }
+    }
+}
+
+//checks the update which is whenever the player won tied or lost.
+//then updates the score and round
+function scoreUpdate(update, round, score)
+{
+    switch(update)
+    {
+        case "tie":
+            round++;
+        break;
+        case "loss":
+            round++;
+            score--;
+        break;
+        case "win":
+            round++;
+            score++;
+        break;
+        default:
+            alert("Something wrong happened at scoreUpdate function.");
+    }
+}
+
+
+//main function
+
+/*
+while(gameStatus)
+{
+*/
+    //keep playing the game
+
+    //instead of prompt, we must have a button which replaces the values of playerMove
+    //with images as well, hopefully
+    playerMove = + prompt("Enter a number.");
+    document.getElementById("p1").textContent = "You chose: " + moveTranslate(playerMove) +"!";
+
+    //random number between 0 and 2 inclusive
+    compMove = Math.floor(Math.random()*3);
+    document.getElementById("p2").textContent = "Enemy chose: " + moveTranslate(compMove) + "!";
+
+/*
+} 
+no more while loop for now...
+*/
