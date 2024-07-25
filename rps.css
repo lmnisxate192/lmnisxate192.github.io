@@ -9,6 +9,7 @@ body {
 
 .container div{
     background-color: rgb(58, 58, 58);
+    border-color: aliceblue;
     border-style: solid;
     border-radius: 5px;
 }
