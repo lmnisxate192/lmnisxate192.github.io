@@ -1,4 +1,6 @@
 *{
+    margin: 0px;
+    padding: 0px;
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -6,43 +8,53 @@ body{
     background-color: black;
 }
 
-h1{
-    color: white;
+h1 {
     text-align: center;
-}
-
-h2 {
-    color: white;
-    text-align: center;
-    margin: 50px;
-}
-
-.box{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
-}
-
-.box > div {
-    height: 100px;
-    width: 100px;
-    background-color: black;
     margin: 10px;
-    padding: 10px;
-    border: 10px solid white;
+    border-radius: 5px;
+
+    color: white;
+    background-color: orangered;
+    text-shadow: 5px 5px 5px black;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+
+    margin: 0px 5px 0px 5px;
+    border-radius: 5px;
+
+    background-color: orangered;
+}
+
+.subbox {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 200px;
+
+    margin: 10px;
+    background: orange;
+    border: 2px solid black;
     border-radius: 5px;
 }
 
-.box p{ 
+.subbox div {
+    flex-grow: 1;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 3px;
+
+    background-color: yellow;
+}
+
+div p{
+    color: black;
+    text-shadow: 2px 2px 2px red;
+}
+
+p {
+    margin: 10px;
     color: white;
-    text-align: center;
-}
-
-.box img{
-    width: 100%;
-    height: 100%;
-}
-
-.p {
-    width: 100%;
 }
