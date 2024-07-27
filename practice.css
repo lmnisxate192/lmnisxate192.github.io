@@ -40,13 +40,18 @@ h1 {
     border-radius: 5px;
 }
 
-.subbox div {
+.subbox div{
     flex-grow: 1;
     margin: 5px;
     padding: 10px;
     border-radius: 3px;
 
     background-color: yellow;
+}
+
+img{
+
+    border-radius: 5px;
 }
 
 div p{
